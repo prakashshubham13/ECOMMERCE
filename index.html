@@ -58,7 +58,7 @@ color: white;
 }
 
 .nav.white ul {
-  background: white;
+  background: rgb(255, 255, 255);
 }
 
 .nav ul li {
@@ -247,7 +247,7 @@ section:nth-child(even) .comf{
 
 } 
 section:nth-child(3) .comff{
-      flex-grow: 9;text-align: center;background-color: #095e80;margin-top: 30px;
+      flex-grow: 9;text-align: center;background-color: #095e80;
       color: #95e6ff;  
 
 } 
@@ -262,6 +262,7 @@ section:nth-child(3) .comff{
 }
 
 @media(max-width: 786px) {
+
       section{
       height: 100vh;
       background-color: #fff;
@@ -271,7 +272,7 @@ section:nth-child(3) .comff{
 }
 
 section:nth-child(even) .comf{
-    transform: translate(0%,0px);
+    transform: translate(0px,0px);
 
 } 
 section:nth-child(even) .comff{
@@ -284,7 +285,18 @@ section:nth-child(even) {
 }
 .comff{
       clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 99%, 0% 100%);
+      height: 10%;
+      padding: 0;
+      flex-grow: 1;
 }
+section:nth-child(3) .comff{
+      margin-top:0px;
+    
+      padding: 0;
+      flex-grow:1.2;
+      
+}
+
 }
 </style>
 </head>
