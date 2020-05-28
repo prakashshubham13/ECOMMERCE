@@ -16,7 +16,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            background: #161616;
+            background: #ffffff;
         }
         
 /*------------------------------------------------navbar---------------------------------------------------------*/
@@ -40,7 +40,7 @@ color: white;
 .nav {
   position: fixed;
   width: 100%;
-  line-height: 60px;
+  line-height: 40px;
   z-index: 99999;
 }
 
@@ -94,7 +94,7 @@ color: white;
   }
 
   .nav ul {
-        
+      
         background: rgb(255, 255, 255);
   }
 
@@ -102,9 +102,7 @@ color: white;
         background: rgb(255, 255, 255);
   }
 
-  .showing {
-        max-height: 34em;
-  }
+
 
   .nav ul li {
         box-sizing: border-box;
@@ -212,6 +210,80 @@ top: 50%;
       width: 70%;
 }
 }
+/*------------------------------------------------section---------------------------------------------------------*/
+section{
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      overflow: hidden;
+}
+
+.comf{
+flex-grow: 1;
+}
+.comf{
+      width: 50%;
+      height: 50%;
+}
+.comff{
+      flex-grow: 9;text-align: center;background-color: #d3ab3b;margin-top: 50px;
+      padding: 5%;
+      color: #6d5f32;
+      clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+
+}
+section:nth-child(even) .comff{
+     background-color: #968d70;
+      padding: 5%;
+      color: #e2ddca;
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      z-index: 2;
+
+} 
+section:nth-child(even) .comf{
+    transform: translate(-30%,0px);
+
+} 
+section:nth-child(3) .comff{
+      flex-grow: 9;text-align: center;background-color: #095e80;margin-top: 50px;
+      color: #95e6ff;  
+
+} 
+
+.comff h2{
+      font-size: 60px;
+}
+.comff h4{
+      font-size: 30px;
+      padding: 5%;
+      text-align: left;
+}
+
+@media(max-width: 786px) {
+      section{
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+}
+
+section:nth-child(even) .comf{
+    transform: translate(0%,0px);
+
+} 
+section:nth-child(even) .comff{
+  
+      clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 99%, 0% 100%);
+    
+} 
+section:nth-child(even) {
+      flex-direction: column-reverse;
+}
+.comff{
+      clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 99%, 0% 100%);
+}
+}
 </style>
 </head>
 <body>
@@ -222,9 +294,7 @@ top: 50%;
         </div>
 
         <div class="logo">
-            <h2>
-              L<span style="color:  rgb(9, 216, 223);">OG</span>O
-              </h2>
+
         </div>
 
         <div class="menu" >
@@ -238,6 +308,9 @@ top: 50%;
   
 </div>
      
+
+
+
 <!------------------------------------------------------------slider---------------------------------------------------------------->
 
 <div class="slideshow-container">
@@ -270,13 +343,56 @@ top: 50%;
    
 </div>
 
+<!------------------------------------------------------------section---------------------------------------------------------------->
+<div class="section">
+
+<section>
+<div class="comf">
+      <img src="section1.png" alt="">
+</div>
+<div class="comff">
+      <h2>
+            Comfortable
+      </h2>
+      <h4>
+            Smooth quality material
+      </h4>
+</div>
+</section>
+
+<section>
+      <div class="comff">
+            <h2>
+                Modern
+            </h2>
+            <h4>
+                  Stay in trend
+            </h4>
+      </div>
+      <div class="comf">
+            <img src="section2.png" alt="">
+      </div>
+  
+      </section>
+
+      <section>
+            <div class="comf">
+                  <img src="section3.png" alt="">
+            </div>
+            <div class="comff">
+                  <h2>
+                        Quality
+                  </h2>
+                  <h4>
+                        Highly durable material
+                  </h4>
+            </div>
+            </section>      
 
 
+</div>
 
-
-
-
-
+<div style="height: 100vh;"></div>
 
 
 <script>
