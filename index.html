@@ -6,24 +6,26 @@
     <title>Document</title>
     <script src="https://kit.fontawesome.com/8893b709f5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <style>html,
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    html,
         body {
             margin: 0;
             padding: 0;
             width: 100%;
-            
             background: #161616;
         }
         
-   
+/*------------------------------------------------navbar---------------------------------------------------------*/
         
-        ion-icon {
-            font-size: 100px;
-            color: white;
-        }
-        
+ion-icon {
+font-size: 100px;
+color: white;
+}    
 
-        
 .logo {
   line-height: 60px;
   position: fixed;
@@ -114,13 +116,99 @@
         display: block;
   }
 }
+
+/*------------------------------------------------main---------------------------------------------------------*/
+
+.mySlides {display: none}
+
+
+/* Slideshow container */
+.slideshow-container {
+      background-image: url(1.png);
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.slideshow-container img{
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      margin-left: 3%;
+ 
+}
+.mySlides img:nth-child(1){
+      bottom: 8%;
+}
+.mySlides img:nth-child(1){
+      bottom: 5%;
+}
+.mySlides img:nth-child(1){
+      bottom: 8%;
+}
+
+ul li{
+      list-style-type: none;
+}
+/* The dots/bullets/indicators */
+.dot {     
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  background-color:transparent;
+  border: 3px solid #cccccc;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+}
+.dot:nth-child(1){
+top: 40%;
+}
+.dot:nth-child(2){
+top: 45%;
+}
+.dot:nth-child(3){
+top: 50%;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media(max-width: 786px) {
+      .slideshow-container img{
+      position: absolute;
+      bottom: 5%;
+      width: 70%;
+}
+}
 </style>
 </head>
 <body>
-
+<div class="main">
     <div class="nav">
-    
-
         <div class="menu-icon">
               <i class="fa fa-bars fa-2x"></i>
         </div>
@@ -142,7 +230,72 @@
   
 </div>
      
+<!------------------------------------------------------------slider---------------------------------------------------------------->
+
+<div class="slideshow-container">
    
+
+      <div class="mySlides fade">
+        <img src="https://www.transparentpng.com/thumb/furniture/iZxKY6-download-furniture-png.png">
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="https://www.transparentpng.com/thumb/furniture/zj3ln2-furniture-photos.png" style="bottom:2%;">
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="https://www.transparentpng.com/thumb/recliner/scratch-and-dent-furniture-mn-recliner-png-28.png" style="bottom: 0%;">
+      </div>
+      <div>
+            <ul>
+        <li class="dot" onclick="currentSlide(1)"></li> 
+        <li class="dot" onclick="currentSlide(2)"></li> 
+        <li class="dot" onclick="currentSlide(3)"></li> 
+      </ul>
+      </div>
+
+      </div>
+      <br>
+      
+   
+
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+</script>
+
 
 
         <script type="text/javascript">
