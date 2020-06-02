@@ -16,7 +16,7 @@
     display: none;
 }
 body{
-    background-color: yellow;
+    background-color: rgb(0, 0, 0);
 }
 
 
@@ -168,7 +168,8 @@ height: 100%;
 .form{
       background: rgb(255, 255, 255);
       width: 50%;
-      background: yellow;
+      background: rgb(0, 0, 0);
+      background:url(m.png);
       text-align: center;
 
       padding: 10%;
@@ -207,6 +208,7 @@ a{
 }
 .form p{
     margin: 10px;
+    color:white;
     text-align: center;
 }
 @media(max-width: 786px) {
@@ -221,6 +223,9 @@ a{
     height: 100vh;
 }
 }
+
+
+
     </style>
 </head>
 
@@ -254,12 +259,12 @@ a{
                       <img src="signin.png" alt="">
                 </div>
                 <div class="form">
-                      <form action="">
+                      <form action="perform.php" method="POST">
                             <h2>SIGNIN</h2>
-                            <input type="text" placeholder="Username">
-                            <input type="text" placeholder="password">
-                            <input type="submit" name="" id="" value="Signin">
-                            <p>Don't have account? <a href="#" onclick="toggleform()">Signin</a></p>
+                            <input type="text" placeholder="Username" name="uname">
+                            <input type="password" placeholder="password" name="pass">
+                            <input type="submit" name="submitt" id="" value="Sign in">
+                            <p>Don't have account? <a href="#" onclick="toggleform()">Sign in</a></p>
                       </form>
                 </div>
           </div>
@@ -269,14 +274,14 @@ a{
     <div class="containerr">
           <div class="signin">
             
-                <div class="form">
-                      <form action="">
+                <div class="form" >
+                      <form action="signup.php" method="POST">
                             <h2 style="color: crimson;">SIGNUP</h2>
-                            <input type="text" placeholder="Username">
-                            <input type="text" placeholder="password">
-                            <input type="tel" placeholder="phone number">
-                            <input type="submit" name="" id="" value="Signup" style="background-color: crimson;">
-                            <p>Already have account? <a href="#" onclick="toggleform()">Signin</a></p>
+                            <input type="text" placeholder="Username" name="uname">
+                            <input type="password" placeholder="password" name="pass">
+                            <input type="tel" placeholder="phone number" name="tel">
+                            <input type="submit" name="submit" id="" value="Sign up" style="background-color: crimson;">
+                            <p>Already have account? <a href="#" onclick="toggleform()">Sign up</a></p>
                       </form>
                 </div>
     
@@ -288,6 +293,18 @@ a{
     
     
     </div>
+
+
+
+
+
+
+ 
+
+    
+
+
+
 
 
 
