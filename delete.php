@@ -19,6 +19,7 @@ require 'config.php';
 
 $sno=$_POST['id'];
 
+
  $q = " delete from car WHERE product='$sno' AND id='$uname'";
 
 if(mysqli_query($conn,$q))

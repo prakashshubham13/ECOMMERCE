@@ -1,42 +1,42 @@
+<?php
 
-
-<!DOCTYPE html>
+require 'config.php';
+$sno=$_GET['sno'];
+?>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://kit.fontawesome.com/8893b709f5.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <style>
-        body{
-background-color:black;
-        }
-    </style>
 </head>
 <body>
-    
 <?php
 
-require 'config.php';
-$name=$_POST['name'];
-$email=$_POST['email'];
-$mssg=$_POST['mssg'];
 
-$query="insert into mssg (name,email,mssg) values ('$name','$email','$mssg')";
+ $q = " delete from shop WHERE sno=$sno";
 
-if(mysqli_query($conn,$query))
+if(mysqli_query($conn,$q))
 {
-  echo'<script type="text/javascript">swal("MESSAGE SEND SUCCESSFULLY!", "WE WILL REPLY SOON", "success");</script>';
+
+  
+  
+  echo'<script type="text/javascript">swal("REMOVED FROM CART!", "CLICK ON SCRREN TO CLOSE ALERT BOX", "success");</script>';
 
 
 
 }
 else{
-    echo'<script type="text/javascript">swal("ERROR!", "CLICK ON SCRREN TO CLOSE ALERT BOX", "success");</script>';
+  
 }
 ?>
+
+
+
 <script>
 
 $(document).click(function() {

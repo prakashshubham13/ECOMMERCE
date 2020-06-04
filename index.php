@@ -616,8 +616,8 @@ section{
               <i class="fa fa-bars fa-2x"></i>
         </div>
 
-        <div class="logo">
-
+        <div class="logo" style="z-index:10;background:white;padding:5px;">
+<h3>LEC<span style="color:yellowgreen">TUL</span>US</h3>
         </div>
 
         <div class="menu" >

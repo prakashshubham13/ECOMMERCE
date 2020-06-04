@@ -189,7 +189,7 @@ form input[type=submit]{
     cursor: pointer;
 }
 
-form input:nth-child(2)[type=submit]{
+form input:nth-child(1)[type=submit]{
     background-color: rgb(21, 255, 21);
     border-radius: 5%;
     padding: 2%;
@@ -499,6 +499,30 @@ h1 span{
   }
 }
 
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align:center;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+@media(max-width: 786px) {
+.box{
+  position:relative;
+  margin-top:22%; 
+}
+}
     </style>
 </head>
 <body>
@@ -541,6 +565,8 @@ h1 span{
 
 <div class="shop">
 <?php
+$c=0;
+$s=0;
 $result = mysqli_query($conn,"select * from car where id='$uname'");
 
 while($row = mysqli_fetch_array($result))
@@ -559,11 +585,15 @@ while($roww = mysqli_fetch_array($resultt))
     <h3><?php echo $roww['name'];?></h3>
     <br>
     <h4>PRICE: $<?php echo $roww['price'];?></h4>
+    <?php $s=$s+$roww['price'];?>
+    <?php $c++ ?>
     <br>
     <form action="delete.php" method="POST">
       <input type="text" value="<?php echo $roww['sno'];?>" name="id" style="display:none;">
-    <input type="submit" value="BUY NOW" name="buy">
+    <!-- <input type="submitt" value="BUY NOW" name="buy"> -->
     <input type="submit" value="REMOVE" name="cart">
+
+
 </form>
 </div>
 
@@ -576,8 +606,56 @@ while($roww = mysqli_fetch_array($resultt))
    
 }
 }
+
 ?>
+
 </div>
+<br><br>
+<?php 
+if($s>0)
+{
+  $d=2;
+$di=0.2;
+}
+else
+{
+
+  $d=0;
+$di=0;
+}
+?>
+<?php $gt=($s+$d)-($s+$d)*$di ?>
+<div class="bill" style="text-align:center;">
+<hr>
+<h3>TOTAL ITEMS:<?php echo $c ?></h3>
+<br>
+<table>
+<tr>
+<th>TOTAL</th>
+<th>DELIVERY CHARGE</th>
+<th>DISCOUNT</th>
+<th>GRAND TOTAL</th>
+</tr>
+<tr>
+<td>$<?php echo $s;?></td>
+<td>$<?php echo $d ?></td>
+<td><?php echo $di*100?>%</td>
+<td>$<?php echo $gt ?></td>
+</tr>
+
+</table>
+<br>
+<a href="pay.php" style="background-color:yellowgreen;display:inline;text-decoration:none;padding:5px;margin:10px;color:black;">
+BUY NOW
+</a>
+<br>
+<br>
+<br>
+</div>
+
+
+
+
 
 
 

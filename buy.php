@@ -15,6 +15,16 @@
 <?php
 require 'config.php';
 session_start();
+if(!isset($_SESSION['uname']))
+{
+  $message = 'Sign in to access.';
+
+  echo "<SCRIPT> //not showing me this
+      alert('$message')
+      window.location.replace('form.html');
+  </SCRIPT>";
+
+}
  $id=$_SESSION['uname'];
  $product=$_POST['id'];
  if(isset($_POST['cart']))
